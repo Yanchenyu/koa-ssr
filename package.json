@@ -1,0 +1,19 @@
+{
+  "name": "koa-ssr",
+  "version": "1.0.0",
+  "description": "react + koa + ssr",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Yanchenyu/koa-ssr.git"
+  },
+  "author": "yanchenyu",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Yanchenyu/koa-ssr/issues"
+  },
+  "homepage": "https://github.com/Yanchenyu/koa-ssr#readme"
+}
