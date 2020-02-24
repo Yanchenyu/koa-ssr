@@ -22,7 +22,7 @@ const startWebServer = async () => {
 
     app.listen(3000);
 
-    console.log(`[app] init success! set up timeout ${+new Date() - start}ms`);
+    console.log(`[app] init success! app listen port 3000, set up timeout ${+new Date() - start}ms`);
 };
 
 startWebServer();
