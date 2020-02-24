@@ -4,7 +4,10 @@
   "description": "react + koa + ssr",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon ./bin/www",
+    "start": "pm2 start ./bin/www --watch",
+    "stop": "pm2 stop ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,16 @@
   "bugs": {
     "url": "https://github.com/Yanchenyu/koa-ssr/issues"
   },
-  "homepage": "https://github.com/Yanchenyu/koa-ssr#readme"
+  "homepage": "https://github.com/Yanchenyu/koa-ssr#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.2.1",
+    "koa-router": "^8.0.8",
+    "koa-views": "^6.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "pm2": "^4.2.3"
+  }
 }
