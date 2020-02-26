@@ -15,4 +15,4 @@ class BasicService {
     }
 }
 
-module.exports = BasicService.getInstance();
+export const basicService = BasicService.getInstance();

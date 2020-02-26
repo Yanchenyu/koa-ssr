@@ -9,7 +9,7 @@ process.on('unhandledRejection', err => {
     // 这里可以接入一些日志记录的接口
 });
 
-module.exports = function() {
+export default function() {
     return async (ctx, next) => {
         try {
             await next();
