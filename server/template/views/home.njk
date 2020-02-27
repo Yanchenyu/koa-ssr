@@ -9,6 +9,7 @@
 <body>
     this is home page
     next is React SSR component
-    <div id="root">{{renderHtml}}</div>
+    <div id="root">{{ renderHtml | safe }}</div>
+    <script type="text/javascript" src="/page/static/home.js" async></script>
 </body>
 </html>

@@ -27,7 +27,7 @@ nodemon({
     ext: 'js',
     delay: '200',
     ignoreRoot: ignore,
-    watch: watch,
+    watch,
     ignore: [],
 });
 
