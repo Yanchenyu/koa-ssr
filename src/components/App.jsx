@@ -5,21 +5,15 @@ export default class extends Component {
 
     constructor(props) {
         super(props);
-        if (typeof window === 'undefined') {
-            // server
-            this.state = {
-                index: 0
-            };
-            console.log('here is server side constructor');
-        } else {
-            // client
-            console.log('here is client side constructor');
-            console.log('state index: ', this.state);
-        }
+        this.state = {
+            index: 0
+        };
     }
 
     handleClick = () => {
-        console.log('lalalalala!!!!');
+        this.setState({
+            index: this.state.index + 1
+        });
     }
 
     componentDidMount() {
@@ -30,7 +24,9 @@ export default class extends Component {
         return (
             <div>
                 <p>this is a SSR component</p>
-                <button onClick={this.handleClick}>click me</button>
+                <div>name: {this.props.data && this.props.data.name}</div>
+                <button onClick={this.handleClick}>click me add one</button>
+                <div>num: {this.state.index}</div>
             </div>
         );
     }

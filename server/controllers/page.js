@@ -3,9 +3,14 @@ import {renderToString} from 'react-dom/server';
 import App from '../../src/components/App';
 
 const home = async (ctx) => {
+    const data = {
+        name: 'SSR',
+        num: 12
+    };
     await ctx.render('home', {
         locale: 'zh',
-        renderHtml: renderToString(<App />)
+        data,
+        renderHtml: renderToString(<App data={data} />)
     });
 }
 
