@@ -11,7 +11,7 @@ const home = async (ctx) => {
     await ctx.render('home', {
         locale: 'zh',
         data,
-        page: 'index',
+        page: 'home',
         renderHtml: renderToString(<Home data={data} />)
     });
 }

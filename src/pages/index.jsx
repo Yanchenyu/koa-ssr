@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
-// pages component
-import Home from './Home';
-import List from './List';
+import { Switch, Route } from 'react-router-dom';
+import { routes } from '../config/routes';
 
 export default function() {
     return (
-        <Router>
-            <Route path="/page/home" exact component={Home} />
-            <Route path="/page/list" exact component={List} />
-        </Router>
+        <Switch>
+            {
+                routes.map((route, index) => (
+                    <Route key={`${index}_${route.path}`}  {...route} />
+                ))
+            }
+        </Switch>
     );
 }

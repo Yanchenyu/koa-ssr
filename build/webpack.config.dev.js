@@ -14,7 +14,8 @@ module.exports = merge(config, {
                     {
                         loader: 'css-loader',
                         options: {
-                            sourceMap: true
+                            sourceMap: true,
+                            module: true
                         }
                     },
                     {

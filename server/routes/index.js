@@ -13,7 +13,7 @@ class Route {
     }
     init(app) {
         const router = new Router();
-        router.use('/page', page.routes(), page.allowedMethods());
+        router.use('/', page.routes(), page.allowedMethods());
         app.use(router.routes()).use(router.allowedMethods());
     }
 }
