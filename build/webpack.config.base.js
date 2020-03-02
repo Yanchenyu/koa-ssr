@@ -8,8 +8,10 @@ console.log('NODE_ENV: ', process.env.NODE_ENV);
 // 入口文件
 const entryFileConfig = {
     // 首页
-    'home': 'index'
-}
+    'index': 'index',
+    'home': 'pages/Home',
+    'list': 'pages/List'
+};
 
 // *输出文件
 const outputFileConfig = {

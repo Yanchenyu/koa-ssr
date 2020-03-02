@@ -1,6 +1,7 @@
 import React from 'react';
 import {renderToString} from 'react-dom/server';
-import App from '../../src/components/App';
+import Home from '../../src/pages/Home';
+import List from '../../src/pages/List';
 
 const home = async (ctx) => {
     const data = {
@@ -10,10 +11,21 @@ const home = async (ctx) => {
     await ctx.render('home', {
         locale: 'zh',
         data,
-        renderHtml: renderToString(<App data={data} />)
+        page: 'index',
+        renderHtml: renderToString(<Home data={data} />)
     });
 }
 
+const list = async (ctx) => {
+    const data = {};
+    await ctx.render('list', {
+        data,
+        page: 'list',
+        renderHtml: renderToString(<List data={data} />)
+    })
+}
+
 export default {
-    home
+    home,
+    list
 }
