@@ -14,8 +14,7 @@ module.exports = merge(config, {
                     {
                         loader: 'css-loader',
                         options: {
-                            sourceMap: true,
-                            module: true
+                            sourceMap: true
                         }
                     },
                     {
@@ -29,7 +28,7 @@ module.exports = merge(config, {
         ]
     },
     devServer: {
-        contentBase: path.resolve(__dirname, './dist'), // 本地服务器所加载的页面所在的目录
+        contentBase: path.resolve(__dirname, '../dist'), // 本地服务器所加载的页面所在的目录
         host: '127.0.0.1',
         port: 6688,
         publicPath: '/page/static/',

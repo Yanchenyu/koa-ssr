@@ -1,28 +1,28 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const nodeExternals = require("webpack-node-externals");
 const alias = require('./alias');
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 
-console.log('NODE_ENV: ', process.env.NODE_ENV);
-
 // 入口文件
 const entryFileConfig = {
-    // 首页
-    'index': 'index',
-    'home': 'pages/Home',
-    'list': 'pages/List'
+    'ssr-index': 'pages/index'
 };
 
 // *输出文件
 const outputFileConfig = {
-    path: path.resolve(__dirname, '../dist/client'),
-    filename: '[name].js'
+    path: path.resolve(__dirname, '../dist/server'),
+    filename: '[name].js',
+    libraryTarget: "commonjs2"
 };
 
 const config = {
+    mode: process.env.NODE_ENV,
     context: path.resolve(__dirname, '../src'),
     entry: entryFileConfig,
     output: outputFileConfig,
+    target: 'node',
+    externals: [nodeExternals()],
     resolve: {
         alias,
         extensions: ['.js', '.jsx', '.css', '.scss'],
@@ -35,16 +35,6 @@ const config = {
     module: {
         rules: [
             {
-                enforce: 'pre',
-                test: /\.(js|jsx)$/,
-                exclude: [
-                    /node_modules/
-                ],
-                use: {
-                    loader: 'eslint-loader'
-                }
-            },
-            {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
                 use: [
@@ -54,21 +44,15 @@ const config = {
                 ]
             },
             {
-                test: /\.(png|jpg|svg|gif|eot|otf|ttf|woff|woff2)$/,
+                test: /\.(scss|css)$/,
                 use: [
                     {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 8192
-                        }
+                        loader: 'ignore-loader'
                     }
                 ]
             }
         ]
-    },
-    plugins: [
-        new CleanWebpackPlugin()
-    ]
+    }
 };
 
 module.exports = config;

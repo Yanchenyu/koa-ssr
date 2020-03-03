@@ -10,7 +10,7 @@
     {% block title %}{% endblock %}
     <div id="root">{{ renderHtml | safe }}</div>
     <script type="text/javascript">
-        window['renderProps'] = {{ data | dump | safe }};
+        window['__ROUTE_DATA__'] = {{ context | dump | safe }};
     </script>
     <script type="text/javascript" src="/page/static/index.js" async></script>
     {# <script type="text/javascript" src="/page/static/{{ page | safe }}.js" async></script> #}

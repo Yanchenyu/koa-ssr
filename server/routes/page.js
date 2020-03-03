@@ -3,7 +3,10 @@ import {renderToString} from 'react-dom/server';
 import Router from 'koa-router';
 import { StaticRouter } from 'react-router-dom';
 // import page from '../controllers/page';
-import App from '../../src/pages';
+
+// import App from '../../src/pages';
+
+const App = require('../../dist/server/ssr-index').default;
 
 const router = new Router();
 
@@ -11,18 +14,20 @@ const router = new Router();
 // router.get('/list', page.list);
 
 router.get('*', async (ctx) => {
-    const data = {
-        name: 'SSR',
-        num: 12
+    const context = {
+        text: 'static context !!',
+        data: {
+            name: 'SSR',
+            num: 12
+        }
     };
-    const context = {};
-    await ctx.render('home', {
+    await ctx.render('base', {
         locale: 'zh',
-        data,
-        page: 'home',
+        // page: 'home',
+        context,
         renderHtml: renderToString(
             <StaticRouter location={ctx.url} context={context}>
-                <App />
+                {React.createElement(App)}
             </StaticRouter>
         )
     });
