@@ -11,7 +11,8 @@
     "build-client": "cross-env NODE_ENV=production webpack --config ./build/webpack.config.prod.js",
     "build-server": "cross-env NODE_ENV=production webpack --config ./build/webpack.config.server.js",
     "build": "npm run build-client && npm run build-server",
-    "start": "node server/script/index.js"
+    "start": "node server/script/index.js",
+    "analyz": "cross-env NODE_ENV=production webpack --config ./build/webpack.config.analyz.js"
   },
   "repository": {
     "type": "git",

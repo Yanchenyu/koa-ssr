@@ -16,7 +16,8 @@ const entryFileConfig = {
 // *输出文件
 const outputFileConfig = {
     path: path.resolve(__dirname, '../dist/client'),
-    filename: '[name].js'
+    filename: '[name].js',
+    chunkFilename: '[name].chunk.js'
 };
 
 const config = {
@@ -68,7 +69,27 @@ const config = {
     },
     plugins: [
         new CleanWebpackPlugin()
-    ]
+    ],
+    optimization: {
+        splitChunks: {
+            cacheGroups: {
+                react: {
+                    name: "react",
+                    test: (module) => {
+                        return /react|react-dom|history/.test(module.context);
+                    },
+                    chunks: "all",
+                    priority: 10 // 优先级
+                },
+                common: { // 打包其余的的公共代码
+                    minChunks: 2, // 引入两次及以上被打包
+                    name: 'common', // 分离包的名字
+                    chunks: 'all',
+                    priority: 5
+                }
+            }
+        }
+    }
 };
 
 module.exports = config;
