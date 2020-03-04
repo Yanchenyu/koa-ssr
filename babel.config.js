@@ -21,7 +21,8 @@ module.exports = function(api) {
             {
                 'loose': true
             }
-        ]
+        ],    
+        '@babel/plugin-syntax-dynamic-import'
     ];
     return {
         presets,

@@ -50,7 +50,7 @@ const config = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: !IS_DEVELOPMENT ? 'babel-loader' : 'babel-loader?cacheDirectory'
+                        loader: 'babel-loader'
                     }
                 ]
             },
@@ -82,10 +82,13 @@ const config = {
                     priority: 10 // 优先级
                 },
                 common: { // 打包其余的的公共代码
-                    minChunks: 2, // 引入两次及以上被打包
+                    minChunks: 3, // 引入三次及以上被打包
                     name: 'common', // 分离包的名字
                     chunks: 'all',
-                    priority: 5
+                    priority: 5,
+                    // test: () => {
+                    //     return !/react|react-dom|history/.test(module.context);
+                    // }
                 }
             }
         }

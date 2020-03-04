@@ -1,0 +1,1 @@
+exports.ids=[3],exports.modules={15:function(t,e,n){"use strict";n.r(e);var r=n(0),u=n.n(r);e.default=function(){return u.a.createElement("div",null,"404 not found!")}}};

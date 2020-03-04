@@ -21,9 +21,14 @@ router.get('*', async (ctx) => {
             num: 12
         }
     };
+    const arr = ctx.url.split('/page/');
+    let location;
+    if (arr.length > 1) {
+        location = arr[1].split('/')[0];
+    }
     await ctx.render('base', {
         locale: 'zh',
-        // page: 'home',
+        page: location,
         context,
         renderHtml: renderToString(
             <StaticRouter location={ctx.url} context={context}>

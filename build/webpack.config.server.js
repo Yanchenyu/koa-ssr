@@ -1,6 +1,6 @@
 const path = require('path');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const nodeExternals = require("webpack-node-externals");
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const alias = require('./alias');
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 
@@ -52,7 +52,10 @@ const config = {
                 ]
             }
         ]
-    }
+    },
+    plugins: [
+        new CleanWebpackPlugin()
+    ]
 };
 
 module.exports = config;
