@@ -1,20 +1,41 @@
-import React, { Component } from 'react';
+import React from 'react';
 
-export default function(componentFactory) {
-    class AsyncComponent extends Component {
+export default function asyncComponent({ loader, Placeholder }) {
+    let Component = null;
+    return class AsyncRouteComponent extends React.Component {
         state = {
-            component: null
+            Component
         }
-        async componentDidMount() {
-            let { default: component } = await componentFactory();
-            this.setState({
-                component
+
+        static load() {
+            return loader().then(ResolvedComponent => {
+                Component = ResolvedComponent.default || ResolvedComponent;
             });
         }
-        render() {
-            const Comp = this.state.component;
-            return Comp ? <Comp {...this.props} /> : null;
+
+        componentWillMount() {
+            AsyncRouteComponent.load().then(this.updateState);
         }
-    }
-    return AsyncComponent;
+
+        updateState = () => {
+            // Only update state if we don't already have a reference to the
+            // component, this prevent unnecessary renders.
+            if (this.state.Component !== Component) {
+                this.setState({
+                    Component,
+                });
+            }
+        }
+
+        render() {
+            const { Component: ComponentFromState } = this.state;
+            if (ComponentFromState) {
+                return <ComponentFromState {...this.props} />;
+            }
+            if (Placeholder) {
+                return <Placeholder {...this.props} />;
+            }
+            return null;
+        }
+    };
 }

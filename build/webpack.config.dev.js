@@ -4,6 +4,7 @@ const config = require('./webpack.config.base');
 
 module.exports = merge(config, {
     mode: "development",
+    target: 'web',
     module: {
         rules: [
             {
@@ -28,6 +29,7 @@ module.exports = merge(config, {
             }
         ]
     },
+    devtool: 'cheap-module-eval-source-map',
     devServer: {
         contentBase: path.resolve(__dirname, '../dist'), // 本地服务器所加载的页面所在的目录
         host: '127.0.0.1',

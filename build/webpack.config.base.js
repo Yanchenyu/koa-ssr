@@ -1,5 +1,6 @@
 const path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const LoadablePlugin = require('@loadable/webpack-plugin');
 const alias = require('./alias');
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 
@@ -8,7 +9,7 @@ console.log('NODE_ENV: ', process.env.NODE_ENV);
 // 入口文件
 const entryFileConfig = {
     // 首页
-    'index': 'index',
+    'root': 'index',
     'home': 'pages/Home',
     'list': 'pages/List'
 };
@@ -17,7 +18,7 @@ const entryFileConfig = {
 const outputFileConfig = {
     path: path.resolve(__dirname, '../dist/client'),
     filename: '[name].js',
-    chunkFilename: '[name].chunk.js'
+    // chunkFilename: '[name].chunk.js'
 };
 
 const config = {
@@ -68,7 +69,8 @@ const config = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new LoadablePlugin()
     ],
     optimization: {
         splitChunks: {

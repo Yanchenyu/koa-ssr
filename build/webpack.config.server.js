@@ -1,6 +1,7 @@
 const path = require('path');
 const nodeExternals = require("webpack-node-externals");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const LoadablePlugin = require('@loadable/webpack-plugin');
 const alias = require('./alias');
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 
@@ -22,7 +23,10 @@ const config = {
     entry: entryFileConfig,
     output: outputFileConfig,
     target: 'node',
-    externals: [nodeExternals()],
+    externals: [
+        '@loadable/component',
+        nodeExternals()
+    ],
     resolve: {
         alias,
         extensions: ['.js', '.jsx', '.css', '.scss'],
@@ -39,7 +43,12 @@ const config = {
                 exclude: /node_modules/,
                 use: [
                     {
-                        loader: !IS_DEVELOPMENT ? 'babel-loader' : 'babel-loader?cacheDirectory'
+                        loader: 'babel-loader',
+                        options: {
+                            caller: {
+                                target: 'node'
+                            }
+                        }
                     }
                 ]
             },
@@ -54,7 +63,8 @@ const config = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin()
+        new CleanWebpackPlugin(),
+        new LoadablePlugin()
     ]
 };
 

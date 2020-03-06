@@ -1,0 +1,104 @@
+{
+  "errors": [],
+  "warnings": [],
+  "version": "4.41.6",
+  "hash": "f2ce53ae44a0cc4440f2",
+  "publicPath": "",
+  "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/server",
+  "assetsByChunkName": {
+    "pages-Home": "pages-Home.js",
+    "pages-List": "pages-List.js",
+    "ssr-index": "ssr-index.js"
+  },
+  "assets": [
+    {
+      "name": "pages-Home.js",
+      "size": 26201,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "pages-Home"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "pages-List.js",
+      "size": 26041,
+      "chunks": [
+        1
+      ],
+      "chunkNames": [
+        "pages-List"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "ssr-index.js",
+      "size": 2582,
+      "chunks": [
+        2
+      ],
+      "chunkNames": [
+        "ssr-index"
+      ],
+      "info": {},
+      "emitted": false
+    }
+  ],
+  "filteredAssets": 0,
+  "entrypoints": {
+    "ssr-index": {
+      "chunks": [
+        2
+      ],
+      "assets": [
+        "ssr-index.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "namedChunkGroups": {
+    "ssr-index": {
+      "chunks": [
+        2
+      ],
+      "assets": [
+        "ssr-index.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "pages-Home": {
+      "chunks": [
+        0
+      ],
+      "assets": [
+        "pages-Home.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    },
+    "pages-List": {
+      "chunks": [
+        1
+      ],
+      "assets": [
+        "pages-List.js"
+      ],
+      "children": {},
+      "childAssets": {}
+    }
+  },
+  "logging": {
+    "webpack.buildChunkGraph.visitModules": {
+      "entries": [],
+      "filteredEntries": 5,
+      "debug": false
+    }
+  },
+  "children": []
+}

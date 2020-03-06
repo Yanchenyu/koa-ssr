@@ -1,19 +1,13 @@
-import Home from '../pages/Home';
-import List from '../pages/List';
-import NotFount from '../pages/NotFount';
+import loadable from '@loadable/component';
 
 export const routes = [
     {
         path: '/page/home',
         exact: true,
-        component: Home
+        component: loadable(() => import('../pages/Home'))
     },
     {
         path: '/page/list',
-        component: List
-    },
-    {
-        path: '/*',
-        component: NotFount
+        component: loadable(() => import('../pages/List'))
     }
 ];
