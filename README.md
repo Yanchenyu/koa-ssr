@@ -39,6 +39,11 @@ server {
 npm run dev
 
 服务端：
+
+打包
+npm run build
+
+启动服务
 npm run start
 
 ## 打开页面

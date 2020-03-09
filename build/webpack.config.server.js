@@ -1,7 +1,6 @@
 const path = require('path');
 const nodeExternals = require("webpack-node-externals");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const LoadablePlugin = require('@loadable/webpack-plugin');
 const alias = require('./alias');
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
 
@@ -24,7 +23,6 @@ const config = {
     output: outputFileConfig,
     target: 'node',
     externals: [
-        '@loadable/component',
         nodeExternals()
     ],
     resolve: {
@@ -63,8 +61,7 @@ const config = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
-        new LoadablePlugin()
+        new CleanWebpackPlugin()
     ]
 };
 
