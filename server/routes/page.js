@@ -12,6 +12,7 @@ const nodeStats = path.resolve(__dirname, '../../dist/server/loadable-stats.json
 const webStats = path.resolve(__dirname, '../../dist/client/loadable-stats.json');
 
 router.get('*', async (ctx) => {
+
     const context = {
         text: 'static context !!',
         data: {
@@ -19,11 +20,11 @@ router.get('*', async (ctx) => {
             num: 12
         }
     };
-    const arr = ctx.url.split('/page/');
-    let location;
-    if (arr.length > 1) {
-        location = arr[1].split('/')[0];
-    }
+    // const arr = ctx.url.split('/page/');
+    // let location;
+    // if (arr.length > 1) {
+    //     location = arr[1].split('/')[0];
+    // }
 
     const nodeExtractor = new ChunkExtractor({ 
         statsFile: nodeStats,
@@ -33,8 +34,7 @@ router.get('*', async (ctx) => {
 
     const webExtractor = new ChunkExtractor({ 
         statsFile: webStats,
-        entrypoints: ["index"],
-        publicPath: "/page/static/",        // 这里设置ares资源前缀
+        entrypoints: ["index"]
     });
     const jsx = webExtractor.collectChunks(
         <StaticRouter location={ctx.url} context={context}>
@@ -50,11 +50,10 @@ router.get('*', async (ctx) => {
 
     await ctx.render('base', {
         locale: 'zh',
-        page: location.replace(/^\S/, s => s.toUpperCase()),
         context,
         resources,
         renderHtml: renderToString(jsx)
     });
-})
+});
 
 export default router;

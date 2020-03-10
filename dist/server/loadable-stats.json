@@ -2,8 +2,8 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.6",
-  "hash": "03fc20321e8e36933a41",
-  "publicPath": "",
+  "hash": "3b4fd76815755449bb23",
+  "publicPath": "/page/static/",
   "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/server",
   "assetsByChunkName": {
     "index": "index.js",
@@ -16,7 +16,7 @@
   "assets": [
     {
       "name": "index.js",
-      "size": 3442,
+      "size": 3455,
       "chunks": [
         0
       ],
@@ -120,7 +120,7 @@
     {
       "errors": [],
       "warnings": [],
-      "publicPath": "",
+      "publicPath": "/page/static/",
       "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/server",
       "assetsByChunkName": {},
       "assets": [],

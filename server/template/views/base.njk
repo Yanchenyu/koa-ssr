@@ -14,11 +14,7 @@
     <script type="text/javascript">
         window['__ROUTE_DATA__'] = {{ context | dump | safe }};
     </script>
-    {# <script type="text/javascript" src="/page/static/react.chunk.js" async></script> #}
     {{ resources.scripts | safe }}
-    {# <script type="text/javascript" src="/page/static/common.chunk.js" async></script> #}
-    {# <script type="text/javascript" src="/page/static/index.js" async></script>
-    <script type="text/javascript" src="/page/static/pages-{{ page | safe }}.js" async></script> #}
     {% block script %}{% endblock %}
 </body>
 </html>

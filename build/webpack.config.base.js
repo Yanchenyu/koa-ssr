@@ -16,6 +16,7 @@ const entryFileConfig = {
 const outputFileConfig = {
     path: path.resolve(__dirname, '../dist/client'),
     filename: '[name].js',
+    publicPath: '/page/static/',        // 这里设置ares资源前缀
     // chunkFilename: '[name].chunk.js'
 };
 

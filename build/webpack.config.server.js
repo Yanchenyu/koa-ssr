@@ -15,7 +15,8 @@ const entryFileConfig = {
 const outputFileConfig = {
     path: path.resolve(__dirname, '../dist/server'),
     filename: '[name].js',
-    libraryTarget: "commonjs2"
+    libraryTarget: "commonjs2",
+    publicPath: '/page/static/'     // 这里设置ares资源前缀
 };
 
 const config = {
