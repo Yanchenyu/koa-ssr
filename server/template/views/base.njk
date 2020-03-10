@@ -7,6 +7,7 @@
     <title>Document</title>
     {{ resources.styles | safe }}
     {{ resources.links | safe }}
+    {% block preload %}{% endblock %}
 </head>
 <body>
     {% block title %}{% endblock %}

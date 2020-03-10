@@ -20,11 +20,11 @@ router.get('*', async (ctx) => {
             num: 12
         }
     };
-    // const arr = ctx.url.split('/page/');
-    // let location;
-    // if (arr.length > 1) {
-    //     location = arr[1].split('/')[0];
-    // }
+    const arr = ctx.url.split('/page/');
+    let location;
+    if (arr.length > 1) {
+        location = arr[1].split('/')[0];
+    }
 
     const nodeExtractor = new ChunkExtractor({ 
         statsFile: nodeStats,
@@ -48,7 +48,7 @@ router.get('*', async (ctx) => {
         links: webExtractor.getLinkTags()
     };
 
-    await ctx.render('base', {
+    await ctx.render(location, {
         locale: 'zh',
         context,
         resources,
