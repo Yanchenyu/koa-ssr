@@ -1,17 +1,15 @@
+import path from 'path';
 import React from 'react';
 import {renderToString} from 'react-dom/server';
 import Router from 'koa-router';
 import { StaticRouter } from 'react-router-dom';
+import { ChunkExtractor } from '@loadable/server';
 // import page from '../controllers/page';
-
-// import App from '../../src/pages';
-
-const App = require('../../dist/server/ssr-index').default;
 
 const router = new Router();
 
-// router.get('/home', page.home);
-// router.get('/list', page.list);
+const nodeStats = path.resolve(__dirname, '../../dist/server/loadable-stats.json');
+const webStats = path.resolve(__dirname, '../../dist/client/loadable-stats.json');
 
 router.get('*', async (ctx) => {
     const context = {
@@ -26,15 +24,36 @@ router.get('*', async (ctx) => {
     if (arr.length > 1) {
         location = arr[1].split('/')[0];
     }
+
+    const nodeExtractor = new ChunkExtractor({ 
+        statsFile: nodeStats,
+        entrypoints: ["index"]
+    });
+    const { default: App } = nodeExtractor.requireEntrypoint();
+
+    const webExtractor = new ChunkExtractor({ 
+        statsFile: webStats,
+        entrypoints: ["index"],
+        publicPath: "/page/static/",        // 这里设置ares资源前缀
+    });
+    const jsx = webExtractor.collectChunks(
+        <StaticRouter location={ctx.url} context={context}>
+            <App />
+        </StaticRouter>
+    );
+
+    const resources = {
+        scripts: webExtractor.getScriptTags(),
+        styles: webExtractor.getStyleTags(),
+        links: webExtractor.getLinkTags()
+    };
+
     await ctx.render('base', {
         locale: 'zh',
-        page: location,
+        page: location.replace(/^\S/, s => s.toUpperCase()),
         context,
-        renderHtml: renderToString(
-            <StaticRouter location={ctx.url} context={context}>
-                {React.createElement(App)}
-            </StaticRouter>
-        )
+        resources,
+        renderHtml: renderToString(jsx)
     });
 })
 

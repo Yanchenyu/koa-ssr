@@ -2,21 +2,22 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.6",
-  "hash": "03fc20321e8e36933a41",
+  "hash": "af84d522c5a1e819642a",
   "publicPath": "",
-  "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/server",
+  "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/client",
   "assetsByChunkName": {
     "index": "index.js",
     "pages-Home": [
       "pages-Home.min.css",
       "pages-Home.js"
     ],
-    "pages-List": "pages-List.js"
+    "pages-List": "pages-List.js",
+    "react.chunk": "react.chunk.js"
   },
   "assets": [
     {
       "name": "index.js",
-      "size": 3442,
+      "size": 27368,
       "chunks": [
         0
       ],
@@ -28,7 +29,7 @@
     },
     {
       "name": "pages-Home.js",
-      "size": 26203,
+      "size": 26261,
       "chunks": [
         1
       ],
@@ -52,12 +53,24 @@
     },
     {
       "name": "pages-List.js",
-      "size": 26041,
+      "size": 26097,
       "chunks": [
         2
       ],
       "chunkNames": [
         "pages-List"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
+      "name": "react.chunk.js",
+      "size": 143903,
+      "chunks": [
+        3
+      ],
+      "chunkNames": [
+        "react.chunk"
       ],
       "info": {},
       "emitted": false
@@ -67,9 +80,11 @@
   "entrypoints": {
     "index": {
       "chunks": [
+        3,
         0
       ],
       "assets": [
+        "react.chunk.js",
         "index.js"
       ],
       "children": {},
@@ -79,9 +94,11 @@
   "namedChunkGroups": {
     "index": {
       "chunks": [
+        3,
         0
       ],
       "assets": [
+        "react.chunk.js",
         "index.js"
       ],
       "children": {},
@@ -121,7 +138,7 @@
       "errors": [],
       "warnings": [],
       "publicPath": "",
-      "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/server",
+      "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/client",
       "assetsByChunkName": {},
       "assets": [],
       "filteredAssets": 0,

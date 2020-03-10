@@ -9,9 +9,7 @@ console.log('NODE_ENV: ', process.env.NODE_ENV);
 // 入口文件
 const entryFileConfig = {
     // 首页
-    'root': 'index',
-    'home': 'pages/Home',
-    'list': 'pages/List'
+    'index': 'index'
 };
 
 // *输出文件
@@ -69,14 +67,16 @@ const config = {
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(),
-        new LoadablePlugin()
+        // new CleanWebpackPlugin(),
+        new LoadablePlugin({
+            writeToDisk: IS_DEVELOPMENT ? true : false
+        })
     ],
     optimization: {
         splitChunks: {
             cacheGroups: {
                 react: {
-                    name: "react",
+                    name: "react.chunk",
                     test: (module) => {
                         return /react|react-dom|history/.test(module.context);
                     },

@@ -4,10 +4,11 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const LoadablePlugin = require('@loadable/webpack-plugin');
 const alias = require('./alias');
 const IS_DEVELOPMENT = process.env.NODE_ENV === 'development';
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 // 入口文件
 const entryFileConfig = {
-    'ssr-index': 'pages/index'
+    'index': 'pages/index'
 };
 
 // *输出文件
@@ -52,11 +53,28 @@ const config = {
                     }
                 ]
             },
+            // {
+            //     test: /\.(scss|css)$/,
+            //     use: [
+            //         {
+            //             loader: 'ignore-loader'
+            //         }
+            //     ]
+            // }
             {
                 test: /\.(scss|css)$/,
                 use: [
                     {
-                        loader: 'ignore-loader'
+                        loader: MiniCssExtractPlugin.loader
+                    },
+                    {
+                        loader: 'css-loader'
+                    },
+                    {
+                        loader: 'postcss-loader'
+                    },
+                    {
+                        loader: 'sass-loader'
                     }
                 ]
             }
@@ -64,7 +82,10 @@ const config = {
     },
     plugins: [
         new CleanWebpackPlugin(),
-        new LoadablePlugin()
+        new LoadablePlugin(),
+        new MiniCssExtractPlugin({
+            filename: '[name].min.css'
+        })
     ]
 };
 

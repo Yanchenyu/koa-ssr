@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    {{ resources.styles | safe }}
+    {{ resources.links | safe }}
 </head>
 <body>
     {% block title %}{% endblock %}
@@ -12,10 +14,11 @@
     <script type="text/javascript">
         window['__ROUTE_DATA__'] = {{ context | dump | safe }};
     </script>
-    <script type="text/javascript" src="/page/static/react.chunk.js" async></script>
-    <script type="text/javascript" src="/page/static/common.chunk.js" async></script>
-    {# <script type="text/javascript" src="/page/static/root.js" async></script> #}
-    <script type="text/javascript" src="/page/static/{{ page | safe }}.js" async></script>
+    {# <script type="text/javascript" src="/page/static/react.chunk.js" async></script> #}
+    {{ resources.scripts | safe }}
+    {# <script type="text/javascript" src="/page/static/common.chunk.js" async></script> #}
+    {# <script type="text/javascript" src="/page/static/index.js" async></script>
+    <script type="text/javascript" src="/page/static/pages-{{ page | safe }}.js" async></script> #}
     {% block script %}{% endblock %}
 </body>
 </html>
