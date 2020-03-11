@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import './list.scss';
 
 export default class extends Component {
 
@@ -40,7 +41,7 @@ export default class extends Component {
 
     render() {
         return (
-            <div>
+            <div className="list_container">
                 <p>List Page</p>
                 <div>name: {this.props.data && this.props.data.name}</div>
                 <button onClick={this.handleClick}>click me add one</button>

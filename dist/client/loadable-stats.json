@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.6",
-  "hash": "a02563ad97096e569dca",
+  "hash": "09c40e895011c813d039",
   "publicPath": "/page/static/",
   "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/client",
   "assetsByChunkName": {
@@ -26,7 +26,7 @@
     },
     {
       "name": "pages-Home.js",
-      "size": 97325,
+      "size": 97376,
       "chunks": [
         "pages-Home"
       ],
@@ -38,7 +38,7 @@
     },
     {
       "name": "pages-List.js",
-      "size": 64120,
+      "size": 96633,
       "chunks": [
         "pages-List"
       ],
@@ -46,7 +46,7 @@
         "pages-List"
       ],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "react.chunk.js",
