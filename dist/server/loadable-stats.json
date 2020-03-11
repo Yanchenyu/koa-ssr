@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.6",
-  "hash": "4bf4a0fbfc660ee7493b",
+  "hash": "4e2dbc880848a4e1878c",
   "publicPath": "/page/static/",
   "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/server",
   "assetsByChunkName": {
@@ -19,9 +19,9 @@
   "assets": [
     {
       "name": "home.css",
-      "size": 47,
+      "size": 58,
       "chunks": [
-        0
+        "home"
       ],
       "chunkNames": [
         "home"
@@ -31,9 +31,9 @@
     },
     {
       "name": "home.js",
-      "size": 902,
+      "size": 3007,
       "chunks": [
-        0
+        "home"
       ],
       "chunkNames": [
         "home"
@@ -43,9 +43,9 @@
     },
     {
       "name": "index.js",
-      "size": 3419,
+      "size": 14520,
       "chunks": [
-        1
+        "index"
       ],
       "chunkNames": [
         "index"
@@ -55,9 +55,9 @@
     },
     {
       "name": "list.css",
-      "size": 47,
+      "size": 58,
       "chunks": [
-        2
+        "list"
       ],
       "chunkNames": [
         "list"
@@ -67,9 +67,9 @@
     },
     {
       "name": "list.js",
-      "size": 776,
+      "size": 2763,
       "chunks": [
-        2
+        "list"
       ],
       "chunkNames": [
         "list"
@@ -82,7 +82,7 @@
   "entrypoints": {
     "index": {
       "chunks": [
-        1
+        "index"
       ],
       "assets": [
         "index.js"
@@ -94,7 +94,7 @@
   "namedChunkGroups": {
     "index": {
       "chunks": [
-        1
+        "index"
       ],
       "assets": [
         "index.js"
@@ -104,7 +104,7 @@
     },
     "home": {
       "chunks": [
-        0
+        "home"
       ],
       "assets": [
         "home.css",
@@ -115,7 +115,7 @@
     },
     "list": {
       "chunks": [
-        2
+        "list"
       ],
       "assets": [
         "list.css",
@@ -132,90 +132,5 @@
       "debug": false
     }
   },
-  "children": [
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "/page/static/",
-      "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/server",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            0
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            0
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/src/index.js!../node_modules/sass-loader/dist/cjs.js!pages/home.scss"
-    },
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "/page/static/",
-      "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/server",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            0
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            0
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/src/index.js!../node_modules/sass-loader/dist/cjs.js!pages/list.scss"
-    }
-  ]
+  "children": []
 }

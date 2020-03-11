@@ -4,15 +4,18 @@ import {renderToString} from 'react-dom/server';
 import Router from 'koa-router';
 import { StaticRouter } from 'react-router-dom';
 import { ChunkExtractor } from '@loadable/server';
+import page from '../controller/page';
 
 const router = new Router();
 
 const nodeStats = path.resolve(__dirname, '../../dist/server/loadable-stats.json');
 const webStats = path.resolve(__dirname, '../../dist/client/loadable-stats.json');
 
-router.get('*', async (ctx) => {
+router.get('/home', page.home);
 
-    let context = {};
+router.get('/list', page.list);
+
+router.get('*', async (ctx) => {
     const arr = ctx.url.split('/page/');
     let location;
     if (arr.length > 1) {
@@ -30,21 +33,8 @@ router.get('*', async (ctx) => {
         entrypoints: ["index", location]
     });
 
-    switch (location) {
-        case 'home':
-            context = {
-                name: 'home'
-            };
-            break;
-        case 'list':
-            context = {
-                name: 'list'
-            };
-            break;
-    }
-
     const jsx = webExtractor.collectChunks(
-        <StaticRouter location={ctx.url} context={context}>
+        <StaticRouter location={ctx.url} context={ctx.context || {}}>
             <App />
         </StaticRouter>
     );
@@ -57,7 +47,7 @@ router.get('*', async (ctx) => {
 
     await ctx.render(location, {
         locale: 'zh',
-        context,
+        context: ctx.context || {},
         resources,
         renderHtml: renderToString(jsx)
     });

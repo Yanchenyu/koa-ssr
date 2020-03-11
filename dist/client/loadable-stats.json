@@ -28,7 +28,7 @@
         "home"
       ],
       "info": {},
-      "emitted": true
+      "emitted": false
     },
     {
       "name": "home.js",
@@ -64,7 +64,7 @@
         "list"
       ],
       "info": {},
-      "emitted": true
+      "emitted": false
     },
     {
       "name": "list.js",
@@ -76,7 +76,7 @@
         "list"
       ],
       "info": {},
-      "emitted": true
+      "emitted": false
     },
     {
       "name": "react.chunk.js",
