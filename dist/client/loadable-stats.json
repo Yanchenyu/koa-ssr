@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.6",
-  "hash": "b7e7dc35225da6dd1d7a",
+  "hash": "9cd4a911f3581d0a4f76",
   "publicPath": "/page/static/",
   "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/client",
   "assetsByChunkName": {
@@ -20,21 +20,21 @@
   "assets": [
     {
       "name": "home.css",
-      "size": 47,
+      "size": 58,
       "chunks": [
-        0
+        "home"
       ],
       "chunkNames": [
         "home"
       ],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "home.js",
-      "size": 26275,
+      "size": 5783,
       "chunks": [
-        0
+        "home"
       ],
       "chunkNames": [
         "home"
@@ -44,9 +44,9 @@
     },
     {
       "name": "index.js",
-      "size": 27345,
+      "size": 1270516,
       "chunks": [
-        1
+        "index"
       ],
       "chunkNames": [
         "index"
@@ -56,33 +56,33 @@
     },
     {
       "name": "list.css",
-      "size": 47,
+      "size": 58,
       "chunks": [
-        2
+        "list"
       ],
       "chunkNames": [
         "list"
       ],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "list.js",
-      "size": 26148,
+      "size": 5103,
       "chunks": [
-        2
+        "list"
       ],
       "chunkNames": [
         "list"
       ],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "react.chunk.js",
-      "size": 143903,
+      "size": 2955266,
       "chunks": [
-        3
+        "react.chunk"
       ],
       "chunkNames": [
         "react.chunk"
@@ -95,8 +95,8 @@
   "entrypoints": {
     "index": {
       "chunks": [
-        3,
-        1
+        "react.chunk",
+        "index"
       ],
       "assets": [
         "react.chunk.js",
@@ -109,8 +109,8 @@
   "namedChunkGroups": {
     "index": {
       "chunks": [
-        3,
-        1
+        "react.chunk",
+        "index"
       ],
       "assets": [
         "react.chunk.js",
@@ -121,7 +121,7 @@
     },
     "home": {
       "chunks": [
-        0
+        "home"
       ],
       "assets": [
         "home.css",
@@ -132,7 +132,7 @@
     },
     "list": {
       "chunks": [
-        2
+        "list"
       ],
       "assets": [
         "list.css",
@@ -149,90 +149,5 @@
       "debug": false
     }
   },
-  "children": [
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "/page/static/",
-      "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/client",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            0
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            0
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/src/index.js!../node_modules/sass-loader/dist/cjs.js!pages/home.scss"
-    },
-    {
-      "errors": [],
-      "warnings": [],
-      "publicPath": "/page/static/",
-      "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/client",
-      "assetsByChunkName": {},
-      "assets": [],
-      "filteredAssets": 0,
-      "entrypoints": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            0
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "namedChunkGroups": {
-        "mini-css-extract-plugin": {
-          "chunks": [
-            0
-          ],
-          "assets": [
-            "*"
-          ],
-          "children": {},
-          "childAssets": {}
-        }
-      },
-      "logging": {
-        "webpack.buildChunkGraph.visitModules": {
-          "entries": [],
-          "filteredEntries": 2,
-          "debug": false
-        }
-      },
-      "children": [],
-      "name": "mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/src/index.js!../node_modules/sass-loader/dist/cjs.js!pages/list.scss"
-    }
-  ]
+  "children": []
 }

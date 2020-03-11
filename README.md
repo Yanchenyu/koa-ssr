@@ -69,8 +69,26 @@ http://www.dev.ssr.com:8866/page/home
 * Q: 如何请求同构？如果当前是服务端首屏，则请求放在服务端，如果是客户端，当前放在客户端请求
 > A: 借助axios或者node-fetch实现双端请求
 
+* Q: 请求部分要准备两套逻辑？
+> A: 
+
 * Q: 如何保证加载页面时只加载对应的js文件和css文件？
 > A: webpack dynamic import实现js懒加载，css文件用gulp
 
 * Q: 为何直接修改节点属性会报warning，并且不会生效？
 > A: 因为react balabala
+
+* Q: Service worker有吗？
+> A: 
+
+* Q: 如何控制服务端内存泄漏问题？
+> A: 
+
+* Q: 如何控制浏览器端内存泄漏问题？
+> A: 
+
+* Q: 现在路由统一处理了，如何处理不同路由下的特殊服务端处理？
+> A: 
+
+* Q: 每次服务端执行的代码都得重新build，如何解决本地开发问题？
+> A: 

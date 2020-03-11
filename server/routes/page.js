@@ -12,13 +12,7 @@ const webStats = path.resolve(__dirname, '../../dist/client/loadable-stats.json'
 
 router.get('*', async (ctx) => {
 
-    const context = {
-        text: 'static context !!',
-        data: {
-            name: 'SSR',
-            num: 12
-        }
-    };
+    let context = {};
     const arr = ctx.url.split('/page/');
     let location;
     if (arr.length > 1) {
@@ -35,6 +29,20 @@ router.get('*', async (ctx) => {
         statsFile: webStats,
         entrypoints: ["index", location]
     });
+
+    switch (location) {
+        case 'home':
+            context = {
+                name: 'home'
+            };
+            break;
+        case 'list':
+            context = {
+                name: 'list'
+            };
+            break;
+    }
+
     const jsx = webExtractor.collectChunks(
         <StaticRouter location={ctx.url} context={context}>
             <App />
