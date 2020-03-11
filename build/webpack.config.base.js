@@ -79,13 +79,13 @@ const config = {
                 react: {
                     name: "react.chunk",
                     test: (module) => {
-                        return /react|react-dom|history/.test(module.context);
+                        return /react|react-dom|react-router-dom|history/.test(module.context);
                     },
                     chunks: "all",
                     priority: 10 // 优先级
                 },
                 common: { // 打包其余的的公共代码
-                    minChunks: 3, // 引入三次及以上被打包
+                    minChunks: 2, // 引入三次及以上被打包
                     name: 'common', // 分离包的名字
                     chunks: 'all',
                     priority: 5,

@@ -85,7 +85,7 @@ const config = {
         new CleanWebpackPlugin(),
         new LoadablePlugin(),
         new MiniCssExtractPlugin({
-            filename: '[name].min.css'
+            filename: '[name].css'
         })
     ]
 };

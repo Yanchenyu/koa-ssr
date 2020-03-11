@@ -4,7 +4,6 @@ import {renderToString} from 'react-dom/server';
 import Router from 'koa-router';
 import { StaticRouter } from 'react-router-dom';
 import { ChunkExtractor } from '@loadable/server';
-// import page from '../controllers/page';
 
 const router = new Router();
 
@@ -28,13 +27,13 @@ router.get('*', async (ctx) => {
 
     const nodeExtractor = new ChunkExtractor({ 
         statsFile: nodeStats,
-        entrypoints: ["index"]
+        entrypoints: ["index", location]
     });
     const { default: App } = nodeExtractor.requireEntrypoint();
 
     const webExtractor = new ChunkExtractor({ 
         statsFile: webStats,
-        entrypoints: ["index"]
+        entrypoints: ["index", location]
     });
     const jsx = webExtractor.collectChunks(
         <StaticRouter location={ctx.url} context={context}>

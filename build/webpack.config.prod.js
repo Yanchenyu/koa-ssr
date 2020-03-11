@@ -1,4 +1,5 @@
 const merge = require('webpack-merge');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const config = require('./webpack.config.base');
 
@@ -26,8 +27,9 @@ module.exports = merge(config, {
         ]
     },
     plugins: [
+        new CleanWebpackPlugin(),
         new MiniCssExtractPlugin({
-            filename: '[name].min.css'
+            filename: '[name].css'
         })
     ]
 });

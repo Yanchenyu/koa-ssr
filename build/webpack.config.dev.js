@@ -1,6 +1,7 @@
 const path = require('path');
 const merge = require('webpack-merge');
 const config = require('./webpack.config.base');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = merge(config, {
     mode: "development",
@@ -11,7 +12,7 @@ module.exports = merge(config, {
                 test: /\.(scss|css)$/,
                 use: [
                     {
-                        loader: 'style-loader'
+                        loader: MiniCssExtractPlugin.loader
                     },
                     {
                         loader: 'css-loader',
@@ -40,5 +41,10 @@ module.exports = merge(config, {
         },
         disableHostCheck: true  // 解决Invalid Host Header错误
         // historyApiFallback: true,  // 不跳转
-    }
+    },
+    plugins: [
+        new MiniCssExtractPlugin({
+            filename: '[name].css'
+        })
+    ]
 });
