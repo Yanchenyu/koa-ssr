@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.6",
-  "hash": "3a303bd002570544fd35",
+  "hash": "6f4be8b92829bbc45f84",
   "publicPath": "/page/static/",
   "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/server",
   "assetsByChunkName": {
@@ -19,7 +19,7 @@
   "assets": [
     {
       "name": "home.css",
-      "size": 58,
+      "size": 55,
       "chunks": [
         "home"
       ],
@@ -27,7 +27,7 @@
         "home"
       ],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "home.js",
@@ -51,11 +51,11 @@
         "index"
       ],
       "info": {},
-      "emitted": true
+      "emitted": false
     },
     {
       "name": "list.css",
-      "size": 58,
+      "size": 55,
       "chunks": [
         "list"
       ],
@@ -63,7 +63,7 @@
         "list"
       ],
       "info": {},
-      "emitted": false
+      "emitted": true
     },
     {
       "name": "list.js",
@@ -75,7 +75,7 @@
         "list"
       ],
       "info": {},
-      "emitted": false
+      "emitted": true
     }
   ],
   "filteredAssets": 0,
