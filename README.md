@@ -69,7 +69,7 @@ http://www.dev.ssr.com:8866/page/home
 * Q: 如何请求同构？如果当前是服务端首屏，则请求放在服务端，如果是客户端，当前放在客户端请求
 > A: 借助axios或者node-fetch实现双端请求
 
-* Q: 请求部分要准备两套逻辑？
+* Q: 请求部分要准备两套逻辑？能否写在一个组件里，类似getInitialprops
 > A: 
 
 * Q: 如何保证加载页面时只加载对应的js文件和css文件？
@@ -91,4 +91,5 @@ http://www.dev.ssr.com:8866/page/home
 > A: 没问题，路由本身是中间件处理机制，统一的只是最后的渲染部分，还是可以做controller去控制不同路由对应不同逻辑
 
 * Q: 每次服务端执行的代码都得重新build，如何解决本地开发问题？
-> A: 
+> A: webpack watch
+

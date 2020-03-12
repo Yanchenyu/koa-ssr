@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
 import './list.scss';
 
 export default class extends Component {
@@ -9,6 +8,10 @@ export default class extends Component {
         this.state = {
             index: 0
         };
+    }
+
+    getInitialProps() {
+        console.log('initial props');
     }
 
     handleClick = () => {
