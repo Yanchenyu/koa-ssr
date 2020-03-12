@@ -93,3 +93,5 @@ http://www.dev.ssr.com:8866/page/home
 * Q: 每次服务端执行的代码都得重新build，如何解决本地开发问题？
 > A: webpack watch
 
+* Q: 如何做redius 缓存？
+> A: 

@@ -10,10 +10,6 @@ export default class extends Component {
         };
     }
 
-    getInitialProps() {
-        console.log('initial props');
-    }
-
     handleClick = () => {
         this.setState({
             index: this.state.index + 1
