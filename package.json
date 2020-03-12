@@ -32,6 +32,13 @@
     "port": 9999,
     "env": "dev"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
+      "pre-push": "npm run lint:error"
+    }
+  },
   "homepage": "https://github.com/Yanchenyu/koa-ssr#readme",
   "dependencies": {
     "@babel/polyfill": "^7.8.3",
