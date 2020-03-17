@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.41.6",
-  "hash": "6f4be8b92829bbc45f84",
+  "hash": "a7ed9d4db414442d2444",
   "publicPath": "/page/static/",
   "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/server",
   "assetsByChunkName": {
@@ -19,21 +19,21 @@
   "assets": [
     {
       "name": "home.css",
-      "size": 55,
+      "size": 44,
       "chunks": [
-        "home"
+        0
       ],
       "chunkNames": [
         "home"
       ],
       "info": {},
-      "emitted": true
+      "emitted": false
     },
     {
       "name": "home.js",
-      "size": 2734,
+      "size": 882,
       "chunks": [
-        "home"
+        0
       ],
       "chunkNames": [
         "home"
@@ -43,9 +43,9 @@
     },
     {
       "name": "index.js",
-      "size": 14520,
+      "size": 3419,
       "chunks": [
-        "index"
+        1
       ],
       "chunkNames": [
         "index"
@@ -55,34 +55,34 @@
     },
     {
       "name": "list.css",
-      "size": 55,
+      "size": 44,
       "chunks": [
-        "list"
+        2
       ],
       "chunkNames": [
         "list"
       ],
       "info": {},
-      "emitted": true
+      "emitted": false
     },
     {
       "name": "list.js",
-      "size": 2490,
+      "size": 771,
       "chunks": [
-        "list"
+        2
       ],
       "chunkNames": [
         "list"
       ],
       "info": {},
-      "emitted": true
+      "emitted": false
     }
   ],
   "filteredAssets": 0,
   "entrypoints": {
     "index": {
       "chunks": [
-        "index"
+        1
       ],
       "assets": [
         "index.js"
@@ -94,7 +94,7 @@
   "namedChunkGroups": {
     "index": {
       "chunks": [
-        "index"
+        1
       ],
       "assets": [
         "index.js"
@@ -104,7 +104,7 @@
     },
     "home": {
       "chunks": [
-        "home"
+        0
       ],
       "assets": [
         "home.css",
@@ -115,7 +115,7 @@
     },
     "list": {
       "chunks": [
-        "list"
+        2
       ],
       "assets": [
         "list.css",
@@ -132,5 +132,90 @@
       "debug": false
     }
   },
-  "children": []
+  "children": [
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "/page/static/",
+      "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/server",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            0
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            0
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "logging": {
+        "webpack.buildChunkGraph.visitModules": {
+          "entries": [],
+          "filteredEntries": 2,
+          "debug": false
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/src/index.js!../node_modules/sass-loader/dist/cjs.js!pages/home.scss"
+    },
+    {
+      "errors": [],
+      "warnings": [],
+      "publicPath": "/page/static/",
+      "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/server",
+      "assetsByChunkName": {},
+      "assets": [],
+      "filteredAssets": 0,
+      "entrypoints": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            0
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "namedChunkGroups": {
+        "mini-css-extract-plugin": {
+          "chunks": [
+            0
+          ],
+          "assets": [
+            "*"
+          ],
+          "children": {},
+          "childAssets": {}
+        }
+      },
+      "logging": {
+        "webpack.buildChunkGraph.visitModules": {
+          "entries": [],
+          "filteredEntries": 2,
+          "debug": false
+        }
+      },
+      "children": [],
+      "name": "mini-css-extract-plugin ../node_modules/css-loader/dist/cjs.js!../node_modules/postcss-loader/src/index.js!../node_modules/sass-loader/dist/cjs.js!pages/list.scss"
+    }
+  ]
 }
