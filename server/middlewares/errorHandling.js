@@ -26,5 +26,5 @@ export default function() {
 
             ctx.app.emit('error', err, ctx);
         }
-    }
+    };
 }

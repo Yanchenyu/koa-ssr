@@ -6,7 +6,7 @@ class BasicService {
         if (!BasicService.instance) {
             BasicService.instance = new BasicService();
         }
-        return BasicService.instance
+        return BasicService.instance;
     }
     init() {
         return Promise.all([
