@@ -32,12 +32,6 @@
     "port": 9999,
     "env": "dev"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm run lint:error"
-    }
-  },
   "homepage": "https://github.com/Yanchenyu/koa-ssr#readme",
   "dependencies": {
     "@babel/polyfill": "^7.8.3",
@@ -59,6 +53,7 @@
     "@babel/preset-env": "^7.8.4",
     "@babel/preset-react": "^7.8.3",
     "@babel/register": "^7.8.3",
+    "@commitlint/cli": "^8.3.5",
     "@loadable/babel-plugin": "^5.12.0",
     "@loadable/component": "^5.12.0",
     "@loadable/server": "^5.12.0",
@@ -90,7 +85,7 @@
     "stylelint-webpack-plugin": "^1.2.3",
     "url-loader": "^3.0.0",
     "webpack": "^4.41.6",
-    "webpack-bundle-analyzer": "^3.6.0",
+    "webpack-bundle-analyzer": "^3.6.1",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.10.3",
     "webpack-merge": "^4.2.2",

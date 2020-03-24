@@ -18,7 +18,7 @@ class Template {
             nunjucksConfig: {
                 trimBlocks: true
             }
-        }))
+        }));
     }
 }
 
