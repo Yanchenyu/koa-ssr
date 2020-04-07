@@ -5,6 +5,7 @@ export default class extends Component {
 
     constructor(props) {
         super(props);
+
         let staticContext = props.staticContext;
 
         if (!staticContext) {

@@ -95,3 +95,6 @@ http://www.dev.ssr.com:8866/page/home
 
 * Q: 如何做redius 缓存？
 > A: 
+
+* Q: 如何做容灾处理？当流量爆发时，SSR如何切回CSR？
+> A: 
