@@ -1,11 +1,12 @@
 {
   "errors": [],
   "warnings": [],
-  "version": "4.41.6",
-  "hash": "7ee5090d52a66d3b324f",
+  "version": "4.42.1",
+  "hash": "b37e39e9e0f362cb3078",
   "publicPath": "/page/static/",
   "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/client",
   "assetsByChunkName": {
+    "common": "common.js",
     "home": [
       "home.css",
       "home.js"
@@ -19,10 +20,22 @@
   },
   "assets": [
     {
+      "name": "common.js",
+      "size": 13702,
+      "chunks": [
+        0
+      ],
+      "chunkNames": [
+        "common"
+      ],
+      "info": {},
+      "emitted": false
+    },
+    {
       "name": "home.css",
       "size": 44,
       "chunks": [
-        0
+        1
       ],
       "chunkNames": [
         "home"
@@ -32,9 +45,9 @@
     },
     {
       "name": "home.js",
-      "size": 939,
+      "size": 1539,
       "chunks": [
-        0
+        1
       ],
       "chunkNames": [
         "home"
@@ -44,9 +57,9 @@
     },
     {
       "name": "index.js",
-      "size": 27345,
+      "size": 27552,
       "chunks": [
-        1
+        2
       ],
       "chunkNames": [
         "index"
@@ -58,7 +71,7 @@
       "name": "list.css",
       "size": 44,
       "chunks": [
-        2
+        3
       ],
       "chunkNames": [
         "list"
@@ -68,9 +81,9 @@
     },
     {
       "name": "list.js",
-      "size": 826,
+      "size": 1423,
       "chunks": [
-        2
+        3
       ],
       "chunkNames": [
         "list"
@@ -80,9 +93,9 @@
     },
     {
       "name": "react.chunk.js",
-      "size": 143903,
+      "size": 143628,
       "chunks": [
-        3
+        4
       ],
       "chunkNames": [
         "react.chunk"
@@ -95,8 +108,8 @@
   "entrypoints": {
     "index": {
       "chunks": [
-        3,
-        1
+        4,
+        2
       ],
       "assets": [
         "react.chunk.js",
@@ -109,8 +122,8 @@
   "namedChunkGroups": {
     "index": {
       "chunks": [
-        3,
-        1
+        4,
+        2
       ],
       "assets": [
         "react.chunk.js",
@@ -121,9 +134,11 @@
     },
     "home": {
       "chunks": [
-        0
+        0,
+        1
       ],
       "assets": [
+        "common.js",
         "home.css",
         "home.js"
       ],
@@ -132,9 +147,11 @@
     },
     "list": {
       "chunks": [
-        2
+        0,
+        3
       ],
       "assets": [
+        "common.js",
         "list.css",
         "list.js"
       ],

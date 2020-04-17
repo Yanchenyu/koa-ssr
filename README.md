@@ -95,3 +95,6 @@ http://www.dev.ssr.com:8866/page/home
 
 * Q: 如何做redius 缓存？
 > A: 
+
+* Q: 是否可以考虑将SSR首屏的style样式直接嵌入到HTML标签中去，不去额外加载css文件，加快首屏渲染速度，后面页面再加载css文件？
+> A: 

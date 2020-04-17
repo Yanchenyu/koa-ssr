@@ -54,39 +54,39 @@ const config = {
                     }
                 ]
             },
-            // {
-            //     test: /\.(scss|css)$/,
-            //     use: [
-            //         {
-            //             loader: 'ignore-loader'
-            //         }
-            //     ]
-            // }
             {
                 test: /\.(scss|css)$/,
                 use: [
                     {
-                        loader: MiniCssExtractPlugin.loader
-                    },
-                    {
-                        loader: 'css-loader'
-                    },
-                    {
-                        loader: 'postcss-loader'
-                    },
-                    {
-                        loader: 'sass-loader'
+                        loader: 'ignore-loader'
                     }
                 ]
             }
+            // {
+            //     test: /\.(scss|css)$/,
+            //     use: [
+            //         {
+            //             loader: MiniCssExtractPlugin.loader
+            //         },
+            //         {
+            //             loader: 'css-loader'
+            //         },
+            //         {
+            //             loader: 'postcss-loader'
+            //         },
+            //         {
+            //             loader: 'sass-loader'
+            //         }
+            //     ]
+            // }
         ]
     },
     plugins: [
         new CleanWebpackPlugin(),
         new LoadablePlugin(),
-        new MiniCssExtractPlugin({
-            filename: '[name].css'
-        })
+        // new MiniCssExtractPlugin({
+        //     filename: '[name].css'
+        // })
     ]
 };
 
