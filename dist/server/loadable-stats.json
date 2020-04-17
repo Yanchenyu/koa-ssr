@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.42.1",
-  "hash": "1f312d23761c3e7dffd3",
+  "hash": "a9462a6bd9ef518a25a5",
   "publicPath": "/page/static/",
   "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/server",
   "assetsByChunkName": {
@@ -25,7 +25,7 @@
     },
     {
       "name": "index.js",
-      "size": 2571,
+      "size": 2518,
       "chunks": [
         1
       ],
@@ -37,7 +37,7 @@
     },
     {
       "name": "list.js",
-      "size": 769,
+      "size": 767,
       "chunks": [
         2
       ],

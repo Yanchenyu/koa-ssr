@@ -2,7 +2,7 @@
   "errors": [],
   "warnings": [],
   "version": "4.42.1",
-  "hash": "b37e39e9e0f362cb3078",
+  "hash": "13ad54c965b01ae01469",
   "publicPath": "/page/static/",
   "outputPath": "/Users/yanchenyu/github/koa-ssr/dist/client",
   "assetsByChunkName": {
